@@ -5,16 +5,34 @@
 ## プロジェクト概要
 
 - プロジェクト名: realestate_app（不動産アプリ）
-- 状態: 立ち上げ段階（技術スタック・構成は未決定）
-- 技術スタックやディレクトリ構成が決まったら、このファイルの該当セクションを更新すること
+- Supabase 認証付きの不動産管理 Web アプリ
+- 技術スタックやディレクトリ構成を変えたら、このファイルの該当セクションを更新すること
 
 ## 技術スタック
 
-（未決定。決まり次第記載する）
+- React 19 + Vite（JavaScript / JSX）
+- ルーティング: react-router-dom
+- 認証: Supabase Auth（`@supabase/supabase-js`、メールアドレス＋パスワード）
+
+## ディレクトリ構成
+
+- `src/supabaseClient.js` … Supabase クライアント（`.env` の値を使用）
+- `src/contexts/AuthContext.jsx` … ログイン状態を提供する `AuthProvider` / `useAuth`
+- `src/components/ProtectedRoute.jsx` … 未ログイン時のリダイレクト（`ProtectedRoute`）と、ログイン済み時のリダイレクト（`GuestRoute`）
+- `src/pages/` … 画面（`Login` / `Signup` / `Properties`）
+- `src/data/properties.js` … 物件のダミーデータ
+
+## 環境変数
+
+- `.env` に `VITE_SUPABASE_URL` と `VITE_SUPABASE_PUBLISHABLE_KEY` を設定する（雛形は `.env.example`）
+- `.env` は `.gitignore` で除外済み。絶対にコミットしない
 
 ## 開発コマンド
 
-（セットアップ・起動・テスト・ビルドのコマンドが決まり次第記載する）
+- `npm install` … 依存パッケージのインストール
+- `npm run dev` … 開発サーバー起動（http://localhost:5173）
+- `npm run build` … 本番ビルド（コミット前に通ることを確認する）
+- `npm run preview` … ビルド結果のプレビュー
 
 ## コミュニケーション
 
