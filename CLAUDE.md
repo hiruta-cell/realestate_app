@@ -24,6 +24,7 @@
 - `src/api/properties.js` … `properties` テーブルの CRUD 関数
 - `src/components/PropertyForm.jsx` … 物件の登録・編集フォーム（共通）
 - `supabase/schema.sql` … テーブル・RLS ポリシー定義（Supabase の SQL Editor で実行する）
+- `supabase/seed.sql` … ダミーデータ投入用 SQL（メールアドレスを書き換えて実行する）
 
 ## データベース
 
