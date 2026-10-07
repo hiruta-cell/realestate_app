@@ -77,5 +77,5 @@
 
 ## デプロイ情報
 
-- 本番URL：https://realestate-gxa3lj454-takao3.vercel.app
+- 本番URL：https://realestate-app-lake.vercel.app
 - Supabaseプロジェクト名：realestate-app
