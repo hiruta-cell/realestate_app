@@ -13,6 +13,7 @@
 - React 19 + Vite（JavaScript / JSX）
 - ルーティング: react-router-dom
 - 認証: Supabase Auth（`@supabase/supabase-js`、メールアドレス＋パスワード）
+- データベース: Supabase（PostgreSQL）＋ RLS
 
 ## ディレクトリ構成
 
@@ -20,7 +21,16 @@
 - `src/contexts/AuthContext.jsx` … ログイン状態を提供する `AuthProvider` / `useAuth`
 - `src/components/ProtectedRoute.jsx` … 未ログイン時のリダイレクト（`ProtectedRoute`）と、ログイン済み時のリダイレクト（`GuestRoute`）
 - `src/pages/` … 画面（`Login` / `Signup` / `Properties`）
-- `src/data/properties.js` … 物件のダミーデータ
+- `src/api/properties.js` … `properties` テーブルの CRUD 関数
+- `src/components/PropertyForm.jsx` … 物件の登録・編集フォーム（共通）
+- `supabase/schema.sql` … テーブル・RLS ポリシー定義（Supabase の SQL Editor で実行する）
+
+## データベース
+
+- `public.properties`：物件名 `name` / 家賃 `rent`（円）/ エリア `area` / 間取り `layout` / 登録者 `user_id`
+- `user_id` は DB の `default auth.uid()` で自動設定するため、フロントからは送らない
+- RLS 有効。自分が登録した物件のみ表示・登録・編集・削除できる。未ログイン（anon）は権限なし
+- スキーマを変更したら `supabase/schema.sql` を更新し、SQL Editor で実行するようユーザーに伝える
 
 ## 環境変数
 
