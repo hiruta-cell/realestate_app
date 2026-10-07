@@ -69,3 +69,8 @@
 
 - 基本は `main` ブランチで作業する
 - 大きな機能追加や実験的な変更は、必要に応じて作業ブランチを切ってから行う
+
+## デプロイ（Vercel）
+
+- `vercel.json` で全 URL を `index.html` にリライトしている（React Router の直接アクセス・再読み込み対策）
+- 環境変数（`VITE_SUPABASE_URL` / `VITE_SUPABASE_PUBLISHABLE_KEY`）は Vercel ダッシュボードで設定する。`vercel.json` には書かない
