@@ -74,3 +74,8 @@
 
 - `vercel.json` で全 URL を `index.html` にリライトしている（React Router の直接アクセス・再読み込み対策）
 - 環境変数（`VITE_SUPABASE_URL` / `VITE_SUPABASE_PUBLISHABLE_KEY`）は Vercel ダッシュボードで設定する。`vercel.json` には書かない
+
+## デプロイ情報
+
+- 本番URL：https://realestate-gxa3lj454-takao3.vercel.app
+- Supabaseプロジェクト名：realestate-app
